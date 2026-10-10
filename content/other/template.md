@@ -123,7 +123,7 @@ loop (i, 0, n) {
 
 `loopt` is useful when you may want to use `ll`.
 
-## Begin and End Shortcut
+### Begin and End Shortcut
 
 ```c++
 vector<int> arr{1, 2};
@@ -137,9 +137,9 @@ sort(be(arr));
 
 If C++20 is supported, consider exclusively using [`std::ranges`](https://cppreference.com/cpp/ranges).
 
-## Template Stuff
+### Template Stuff
 
-The template stuff at the end allows for printing arrays and maps. It leverages SFINAE instead of Concepts for broader compatability. 
+The template stuff at the end allows for printing arrays and maps. It leverages SFINAE instead of concepts for broader language compatability. 
 
 ```c++
 vector<string> arr = {1, 2, 3};
