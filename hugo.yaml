@@ -1,0 +1,32 @@
+baseURL: https://csumb-computing.github.io/competitive-programming-guide/
+locale: en-us
+title: Competitive Programming
+theme: hugo-book
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+  highlight:
+    style: base16-snazzy
+
+params:
+  # Color theme: light, dark or auto (follows the browser/OS preference).
+  BookTheme: auto
+
+  # Render every top-level section in the sidebar menu.
+  BookSection: "*"
+
+  # Full-text search in the sidebar.
+  BookSearch: true
+
+  # Show the table of contents on the right side of pages.
+  BookToC: true
+
+  # Warn about links that point to pages that do not exist.
+  BookPortableLinks: warning
+
+  BookComments: false
+  BookServiceWorker: false
