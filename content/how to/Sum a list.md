@@ -1,4 +1,6 @@
-# Sum a list
+---
+title: Sum a list
+---
 
 ## Python
 

@@ -1,4 +1,6 @@
-# Finding min or max
+---
+title: Finding min or max
+---
 
 ## With Scalar
 

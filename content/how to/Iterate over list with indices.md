@@ -1,4 +1,6 @@
-# Iterate over list with indices
+---
+title: Iterate over list with indices
+---
 
 ## Python
 

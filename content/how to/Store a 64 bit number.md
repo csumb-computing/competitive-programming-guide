@@ -1,4 +1,6 @@
-# Store a 64 bit number
+---
+title: Store a 64 bit number
+---
 
 ## Python
 

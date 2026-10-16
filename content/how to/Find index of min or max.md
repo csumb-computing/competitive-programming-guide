@@ -1,4 +1,6 @@
-# Find index of min or max
+---
+title: Find index of min or max
+---
 
 ## Python
 

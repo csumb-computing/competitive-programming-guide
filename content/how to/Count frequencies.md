@@ -1,4 +1,6 @@
-# How to count frequencies
+---
+title: How to count frequencies
+---
 
 ## Python
 

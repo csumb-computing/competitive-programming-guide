@@ -1,4 +1,6 @@
-# Print a formatted number
+---
+title: Print a formatted number
+---
 
 ## Python
 

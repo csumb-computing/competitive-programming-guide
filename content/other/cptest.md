@@ -1,4 +1,6 @@
-# cptest
+---
+title: cptest
+---
 
 A tool I made to automatically run the code. See [cptest.rs](https://github.com/hyperupcall-projects/dev/blob/main/tools/cptest.rs). Use it with [competitive-programming-paste](./competitive-programming-paste.md).
 

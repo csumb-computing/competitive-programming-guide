@@ -1,4 +1,6 @@
-# Build a set or map
+---
+title: Build a set or map
+---
 
 ## Python
 

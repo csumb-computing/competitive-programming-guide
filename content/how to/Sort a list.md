@@ -1,4 +1,6 @@
-# Sort a list
+---
+title: Sort a list
+---
 
 There are two forms:
 

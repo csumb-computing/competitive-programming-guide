@@ -1,4 +1,6 @@
-# Split and join strings
+---
+title: Split and join strings
+---
 
 ## Python
 

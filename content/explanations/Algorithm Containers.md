@@ -1,4 +1,6 @@
-# Using Pointers from Algorithms
+---
+title: Using Pointers from Algorithms
+---
 
 See [undefined behavior](./Undefined behavior.md]) for details.
 

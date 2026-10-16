@@ -1,4 +1,6 @@
-# Finding value in list
+---
+title: Finding value in list
+---
 
 There are two forms:
 

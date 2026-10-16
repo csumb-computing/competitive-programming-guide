@@ -1,4 +1,6 @@
-# Competitive Programming Paste
+---
+title: Competitive Programming Paste
+---
 
 This is a userscript that makes it easy to create a directory, test files, and the program template for problems on Kattis, CSES, and Codeforces. Use it with [cptest](./cptest.md).
 

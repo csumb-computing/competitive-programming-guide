@@ -1,4 +1,6 @@
-# Iterate over two lists at once
+---
+title: Iterate over two lists at once
+---
 
 ## Python
 

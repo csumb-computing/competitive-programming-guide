@@ -10,6 +10,20 @@ A notes site built with [Hugo](https://gohugo.io) and the
 
 ## Local development
 
+Clone the repository together with its submodules:
+
+```sh
+git clone --recurse-submodules git@github.com:csumb-computing/competitive-programming-guide.git
+```
+
+If you already cloned without them, populate the submodules afterwards:
+
+```sh
+git submodule update --init --recursive
+```
+
+Then start the server:
+
 ```sh
 hugo server
 ```
@@ -29,17 +43,30 @@ The generated site is written to `public/`.
 Content lives in `content/`. Each top-level folder is a section that shows up in
 the sidebar menu.
 
-- `content/how-to-basics/` — common operations in Python and C++.
+- `content/explanations/` — conceptual explanations.
+- `content/how to/` — common operations in Python and C++. Note the space in the
+  folder name.
+- `content/other/` — tooling and templates.
 
-To add a page, drop a Markdown file into the relevant section folder. The page
-title is taken from the file name unless you add a `title` in front matter.
+To add a page, drop a Markdown file into the relevant section folder and set its
+`title` in front matter. The file name becomes the URL slug.
 
 ## Theme
 
-The theme is vendored in `themes/hugo-book` at v0.15.0. To update it, replace the
-folder with a fresh clone of the desired release:
+The theme is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+at `themes/hugo-book`, pinned to v0.15.0. Because it is a submodule, a plain
+`git clone` leaves the folder empty — use `--recurse-submodules` (or run
+`git submodule update --init --recursive` afterwards) to populate it. CI checks
+out submodules recursively as well.
+
+To update the theme to a new release, check out the tag inside the submodule and
+commit the new gitlink:
 
 ```sh
-rm -rf themes/hugo-book
-git clone --depth 1 --branch v0.15.0 https://github.com/alex-shpak/hugo-book themes/hugo-book
+cd themes/hugo-book
+git fetch --tags
+git checkout v0.15.0
+cd ../..
+git add themes/hugo-book
+git commit -m "Update hugo-book to v0.15.0"
 ```

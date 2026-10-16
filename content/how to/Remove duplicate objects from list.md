@@ -1,4 +1,6 @@
-# Remove duplicate objects from list
+---
+title: Remove duplicate objects from list
+---
 
 ## Python
 

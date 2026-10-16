@@ -1,4 +1,6 @@
-# How to count a single frequency
+---
+title: How to count a single frequency
+---
 
 ### Value
 

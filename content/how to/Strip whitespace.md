@@ -1,4 +1,6 @@
-# Strip whitespace
+---
+title: Strip whitespace
+---
 
 ## Python
 

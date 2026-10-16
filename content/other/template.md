@@ -1,4 +1,6 @@
-# Template
+---
+title: Template
+---
 
 It's important to have a template to ease reading and writing code. Mine may be of some inspiration:
 

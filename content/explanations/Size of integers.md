@@ -1,4 +1,6 @@
-# Size of integers
+---
+title: Size of integers
+---
 
 ## Python
 

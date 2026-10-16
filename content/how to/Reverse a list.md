@@ -1,4 +1,6 @@
-# Reverse a list
+---
+title: Reverse a list
+---
 
 ## Python
 

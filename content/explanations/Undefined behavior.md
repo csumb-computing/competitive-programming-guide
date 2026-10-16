@@ -1,4 +1,6 @@
-# Undefined behavior
+---
+title: Undefined behavior
+---
 
 Undefined behavior (UB) is when the C++ standard places **no requirements** on
 what your program does. The compiler is allowed to do anything: crash, return

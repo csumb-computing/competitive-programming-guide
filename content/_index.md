@@ -2,8 +2,6 @@
 title: Competitive Programming
 ---
 
-# Competitive Programming
-
 There are a plethora of great sites for competitive programming. Some include:
 
 - [cp-algorithms.com](https://cp-algorithms.com/)
