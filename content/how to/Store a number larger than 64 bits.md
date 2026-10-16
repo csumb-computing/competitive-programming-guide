@@ -26,3 +26,18 @@ void print(__int128 n) {
 ```
 
 For truly arbitrary size, use `boost::multiprecision::cpp_int`.
+
+## Java
+
+Use [`BigInteger`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html) for arbitrary-precision integers and [`BigDecimal`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html) for arbitrary-precision decimals.
+
+```java
+BigInteger x = BigInteger.valueOf(2).pow(100);  // 1267650600228229401496703205376
+BigInteger y = new BigInteger("123456789012345678901234567890");
+
+x.add(y);       // Addition, does NOT mutate x.
+x.multiply(y);  // Multiplication.
+x.mod(y);       // Modulo.
+```
+
+`BigInteger` is immutable, so every operation returns a new object; there is no `+` operator. It is much slower than `long`, so only reach for it when the values genuinely exceed 64 bits.

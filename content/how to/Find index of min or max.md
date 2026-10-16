@@ -30,3 +30,27 @@ if (!nums.empty()) {
     int i = ranges::min_element(nums) - nums.begin();
 }
 ```
+
+## Java
+
+Java has no builtin for the index; loop manually.
+
+```java
+int[] nums = {3, 1, 2};
+int minIdx = 0, maxIdx = 0;
+for (int i = 1; i < nums.length; i++) {
+    if (nums[i] < nums[minIdx]) minIdx = i;
+    if (nums[i] > nums[maxIdx]) maxIdx = i;
+}
+// minIdx == 1, maxIdx == 0
+```
+
+For a `List`, use `indexOf` with `Collections.min`/`max`.
+
+```java
+List<Integer> list = List.of(3, 1, 2);
+int i = list.indexOf(Collections.min(list));  // 1
+int j = list.indexOf(Collections.max(list));  // 0
+```
+
+Empty list: `Collections.min`/`max` throw `NoSuchElementException`, so guard first.

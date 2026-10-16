@@ -52,3 +52,24 @@ for (const auto& val : vec) {
       counter[val] += 1;
 }
 ```
+
+## Java
+
+```java
+int[] arr = {9, 9, 9, 5};
+
+Map<Integer, Integer> freqs = new HashMap<>();
+for (int val : arr) {
+    freqs.merge(val, 1, Integer::sum);
+}
+// {9: 3, 5: 1}
+```
+
+`merge` inserts `1` when the key is absent and otherwise combines with the existing value. If you prefer to be explicit, use `getOrDefault`.
+
+```java
+freqs.put(val, freqs.getOrDefault(val, 0) + 1);
+```
+
+For a sorted map, use `TreeMap`; for insertion order, use `LinkedHashMap`.
+```

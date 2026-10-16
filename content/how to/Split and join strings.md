@@ -33,3 +33,17 @@ for (size_t i = 0; i < parts.size(); i++) {
 ```
 
 Empty input: `split` gives `[""]` in Python; the C++ loop yields no tokens.
+
+## Java
+
+```java
+// Split. The argument is a REGEX.
+"a,b,c".split(",");     // ["a", "b", "c"]
+"a b  c".split("\\s+");  // ["a", "b", "c"], splits on runs of whitespace
+
+// Join.
+String.join(",", List.of("a", "b", "c"));  // "a,b,c"
+String.join("", List.of("a", "b"));        // "ab"
+```
+
+Empty input: `"".split(",")` returns `[""]`, matching Python. Note that `split` takes a regex, so a literal `.` must be escaped as `"\\."`.

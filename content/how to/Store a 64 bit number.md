@@ -31,3 +31,19 @@ int64_t z = 1LL << 62;
 ```
 
 This is ill-advised. On some platforms, the program will fail to program if it's not possible to use a 64-bit type (as on a 32-bit computer). I've encountered this with some older graders like UVa.
+
+## Java
+
+In Java, use `long`, which is _exactly_ 64 bits on every platform (unlike C++, where the size is only guaranteed to be at least 64 bits).
+
+```java
+long x = 9;
+```
+
+For large integer literals, use the `L` suffix. Without it, a literal that does not fit in an `int` is a compile error.
+
+```java
+long x = 9223372036854775807L;
+```
+
+Unlike C++, Java has no unsigned integer types. If you need the full unsigned 64-bit range, use `BigInteger` or `Long.toUnsignedString`.

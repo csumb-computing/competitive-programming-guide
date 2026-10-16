@@ -56,5 +56,25 @@ if (auto it = find(nums.begin(), nums.end(), 3); it != nums.end()) {
 if (auto it = ranges::find(nums, 3); it != nums.end()) {
 	int idx = it - nums.begin(); // 1
 }
+```
 
 Note that like above, if the value is not found, the returned iterator is the end iterator, and dereferencing it is ALSO undefined behavior.
+
+## Java
+
+Use [`List.contains`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#contains(java.lang.Object)) or [`List.indexOf`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#indexOf(java.lang.Object)).
+
+```java
+List<Integer> nums = List.of(1, 3);
+nums.contains(3);  // true
+nums.indexOf(3);   // 1
+```
+
+For arrays, use a stream or a loop. Note that `Arrays.asList(arr)` on an `int[]` gives a `List<int[]>`, not a `List<Integer>`, so prefer a stream.
+
+```java
+int[] arr = {1, 3};
+boolean found = Arrays.stream(arr).anyMatch(x -> x == 3);  // true
+```
+
+`indexOf` returns `-1` when the value is not found, so no exception is thrown.

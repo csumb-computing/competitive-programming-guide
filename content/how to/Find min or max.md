@@ -22,6 +22,15 @@ min(2, 4);
 ```
 
 
+### Java Scalar
+
+In Java, use [`Math.min`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#min(int,int)) or [`Math.max`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#max(int,int)).
+
+```java
+Math.min(2, 4);  // 2
+Math.max(2, 4);  // 4
+```
+
 ## With List
 
 ### Python List
@@ -71,3 +80,28 @@ if (it != numbers.end()) {
 ```
 
 Note that like above, if the input array is empty, and you try to dereference the retrned pointer, it is ALSO undefined behavior.
+
+### Java List
+
+Use [`Collections.min`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html#min(java.util.Collection)) or [`Collections.max`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html#max(java.util.Collection)).
+
+```java
+List<Integer> nums = List.of(1, 3);
+int val = Collections.min(nums);  // 1
+```
+
+If the list is empty, `Collections.min`/`max` throw `NoSuchElementException`.
+
+```java
+Collections.min(List.of());  // Raises NoSuchElementException
+```
+
+For arrays, use a stream, which returns an `OptionalInt` instead of throwing.
+
+```java
+int[] arr = {1, 3};
+int val = Arrays.stream(arr).max().getAsInt();  // 3
+
+// Empty array: the OptionalInt is empty, so getAsInt() throws NoSuchElementException.
+Arrays.stream(new int[]{}).max().getAsInt();  // Raises NoSuchElementException
+```

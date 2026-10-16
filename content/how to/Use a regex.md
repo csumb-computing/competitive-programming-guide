@@ -101,3 +101,46 @@ Note that `regex_match` anchors both ends, unlike Python's `re.match`, which onl
 Note that `std::regex` is slow and can be a bottleneck on large inputs. If a pattern is simple (a fixed delimiter, a run of digits), hand-rolled parsing is usually faster and worth it in a tight loop.
 
 In Python, `re` caches recently used patterns, but if you reuse one in a loop, compile it once with `re.compile(r"...")` and call methods on the compiled object.
+
+## Java
+
+Use [`java.util.regex.Pattern`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Pattern.html) and [`Matcher`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Matcher.html). Java's regex engine is close to Python's. Backslashes in string literals must be doubled (`"\\d+"`).
+
+```java
+import java.util.regex.*;
+
+String s = "abc 123 def 456";
+Pattern p = Pattern.compile("\\d+");
+
+// find: first match anywhere.
+Matcher m = p.matcher(s);
+if (m.find()) {
+    m.group();  // "123"
+}
+
+// matches: the ENTIRE string must match.
+Pattern.compile("\\d+").matcher("123").matches();  // true
+Pattern.compile("\\d+").matcher(s).matches();      // false
+
+// lookingAt: matches only at the start of the string.
+Pattern.compile("\\d+").matcher(s).lookingAt();    // false, s starts with "abc"
+
+// Iterate every match.
+m.reset();
+while (m.find()) {
+    m.group();  // "123", then "456"
+}
+
+// Groups.
+Matcher g = Pattern.compile("(\\w+)\\s+(\\d+)").matcher(s);
+if (g.find()) {
+    g.group(1);  // "abc"
+    g.group(2);  // "123"
+}
+
+// replaceAll and split.
+p.matcher(s).replaceAll("#");  // "abc # def #"
+Pattern.compile("\\s+").split("a  b   c");  // ["a", "b", "c"]
+```
+
+Note that `matches` anchors both ends (like C++'s `regex_match`), while `find` searches anywhere (like Python's `re.search`). Compile a `Pattern` once and reuse it; compiling inside a loop is a common performance mistake.

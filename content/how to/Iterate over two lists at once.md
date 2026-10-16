@@ -23,3 +23,15 @@ for (int i = 0; i < min(a.size(), b.size()); i++) {
 ```
 
 Both stop at the shorter list; no out-of-bounds access.
+
+## Java
+
+```java
+int[] a = {1, 2};
+String[] b = {"a", "b"};
+for (int i = 0; i < Math.min(a.length, b.length); i++) {
+    System.out.println(a[i] + " " + b[i]);
+}
+```
+
+Both stop at the shorter list; no out-of-bounds access.

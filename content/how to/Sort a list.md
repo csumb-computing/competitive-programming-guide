@@ -68,3 +68,31 @@ Note that sorting does NOT return a new container, it mutates the one you passed
 Note that sorting an empty container is valid and does nothing; no exception and no undefined behavior.
 
 The comparator must provide a strict weak ordering. If it does not (for example, a comparator using `<=` instead of `<`), the behavior is undefined.
+
+## Java
+
+In Java, use [`Collections.sort`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) for lists or [`Arrays.sort`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#sort(int%5B%5D)) for arrays. Both sort in place.
+
+```java
+List<Integer> nums = new ArrayList<>(List.of(3, 1, 2));
+Collections.sort(nums);  // [1, 2, 3], sorts IN PLACE
+
+int[] arr = {3, 1, 2};
+Arrays.sort(arr);  // {1, 2, 3}, sorts IN PLACE
+```
+
+To sort descending or by a custom rule, pass a comparator:
+
+```java
+Collections.sort(nums, Comparator.reverseOrder());  // [3, 2, 1]
+
+// Sort pairs by their first element.
+List<int[]> pairs = new ArrayList<>(List.of(new int[]{2, 1}, new int[]{1, 2}));
+pairs.sort(Comparator.comparingInt(p -> p[0]));  // [[1, 2], [2, 1]]
+```
+
+Note that sorting does NOT return a new list, it mutates the one you passed in. If you need the original preserved, copy it first (`List<Integer> copy = new ArrayList<>(nums);`).
+
+Note that sorting an empty list is valid and does nothing; no exception is thrown.
+
+`Arrays.sort` on a primitive array is not stable, but stability is irrelevant for primitives. `Collections.sort` and `List.sort` are stable. If the elements are not mutually comparable, sorting throws `ClassCastException`.
